@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Turkish Alphabet Module</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #ffffff;
+        text-align: center;
+        margin: 0;
+    }
+
+    header {
+        background: #E30A17; /* Turkish red */
+        color: white;
+        padding: 20px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        margin-top: 5px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        border: 2px solid #E30A17;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        transition: 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        background: #ffe5e7;
+    }
+
+    .letter {
+        font-size: 32px;
+        font-weight: bold;
+        color: #E30A17;
+    }
+
+    .word {
+        margin-top: 10px;
+        color: #333;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        border: none;
+        background: #E30A17;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #b30812;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🇹🇷 Turkish Alphabet</h1>
+    <p>Learn essential sounds</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div class="letter">ç</div>
+        <div class="word">çay (tea)</div>
+        <button onclick="speak('çay')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+        <div class="letter">ş</div>
+        <div class="word">şeker (sugar)</div>
+        <button onclick="speak('şeker')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+        <div class="letter">ö</div>
+        <div class="word">Öğrenci (student)</div>
+        <button onclick="speak('otel')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+        <div class="letter">ü</div>
+        <div class="word">üniversite (university)</div>
+        <button onclick="speak('üniversite')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+        <div class="letter">ı</div>
+        <div class="word">kırmızı (red)</div>
+        <button onclick="speak('kırmızı')">🔊 Listen</button>
+    </div>
+
+    <div class="card">
+        <div class="letter">ğ</div>
+        <div class="word">dağ (mountain)</div>
+        <button onclick="speak('dağ')">🔊 Listen</button>
+    </div>
+
+</div>
+
+<script>
+function speak(word) {
+    const speech = new SpeechSynthesisUtterance(word);
+    speech.lang = "tr-TR";
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
